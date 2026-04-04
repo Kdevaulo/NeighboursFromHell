@@ -3,16 +3,12 @@ using UnityEngine;
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private GameObject _locationPrefab;
-
-    private GameObject _location;
+    
+    private LocationSpawner _locationSpawner;
     
     void Awake()
     {
-        if (_locationPrefab == null)
-        {
-            return;
-        }
-        
-        _location = Instantiate(_locationPrefab, transform);
+        _locationSpawner = new LocationSpawner(_locationPrefab);
+        _locationSpawner.SpawnLocation();
     }
 }
