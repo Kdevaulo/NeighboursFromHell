@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class ClickTester : MonoBehaviour
 {
-    [SerializeField] private InputManager inputManager;
+    [SerializeField] private InputManager _inputManager;
 
     private void OnEnable()
     {
         // подписка, когда объект активен
-        inputManager.OnLeftClick += HandleLeftClick;
-        inputManager.OnRightClick += HandleRightClick;
+        _inputManager.OnLeftClick += HandleLeftClick;
+        _inputManager.OnRightClick += HandleRightClick;
     }
 
     private void OnDisable()
     {
         // отписка, когда объект выключается
-        inputManager.OnLeftClick -= HandleLeftClick;
-        inputManager.OnRightClick -= HandleRightClick;
+        _inputManager.OnLeftClick -= HandleLeftClick;
+        _inputManager.OnRightClick -= HandleRightClick;
     }
 
     private void HandleLeftClick()

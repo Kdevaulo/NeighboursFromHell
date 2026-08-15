@@ -1,13 +1,10 @@
-using System;
-
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private GameObject _locationPrefab;
     [SerializeField] private InputManager _inputManager;
-    
+
     private LocationSpawner _locationSpawner;
 
     private void Awake()
@@ -15,8 +12,9 @@ public class EntryPoint : MonoBehaviour
         if (_locationPrefab == null)
         {
             Debug.LogError("locationPrefab не назначен!");
-            return; 
+            return;
         }
+
         _locationSpawner = new LocationSpawner(_locationPrefab);
         _locationSpawner.SpawnLocation();
     }
@@ -28,8 +26,8 @@ public class EntryPoint : MonoBehaviour
             Debug.LogError("Не назначен InputManager!");
             return;
         }
-        _inputManager.EnableInput();
 
+        _inputManager.EnableInput();
     }
 
     private void OnDisable()
