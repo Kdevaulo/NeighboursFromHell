@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7e3a64eb174ab47833df53097a4551, type: 3}
+  m_Name: microwave
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 8690836788861592963, guid: 4ea2507927d3cb740821ac46572600ac, type: 3}
+  nameObject: microwave
+  positionObject: {x: 2.021, y: 1.54, z: 0}
+  imageObjectBase: {fileID: 21300000, guid: 1a5bdb3e7ed6d2d4fb584b164f172cf6, type: 3}
+  imageObjectBroken: {fileID: 21300000, guid: edc9f97553dff4d4fb214d4dfa092dd9, type: 3}

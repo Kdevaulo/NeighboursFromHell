@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7e3a64eb174ab47833df53097a4551, type: 3}
+  m_Name: TV
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 1985088808779283018, guid: 88437c5d070eba54da37ba77ae8d27f0, type: 3}
+  nameObject: TV
+  positionObject: {x: -5.12, y: 1.06, z: 0}
+  imageObjectBase: {fileID: 21300000, guid: 200371384edf838489a38e06cd2f228c, type: 3}
+  imageObjectBroken: {fileID: 21300000, guid: d3b5b9a1f51b1104593dd2447c77ec26, type: 3}
