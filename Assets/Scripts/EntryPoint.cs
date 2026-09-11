@@ -5,22 +5,30 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private GameObject _locationPrefab;
     [SerializeField] private InputManager _inputManager;
     [SerializeField] private InteractiveObject _interactive;
-    
+
     private LocationSpawner _locationSpawner;
 
     private void Awake()
     {
+        if (!ValidationHelper.CheckRefs(this, _locationPrefab, _inputManager, _interactive))
+        {
+            enabled = false;
+            return;
+        }
+
         _locationSpawner = new LocationSpawner(_locationPrefab);
         _locationSpawner.SpawnLocation();
     }
 
     private void Start()
     {
-        if (_inputManager == null || _interactive == null)
+        if (!ValidationHelper.CheckRefs(this, _locationPrefab, _inputManager, _interactive))
         {
-            Debug.LogErrorFormat("Не назначен InputManager или Interactive!");
+            enabled = false;
             return;
         }
+
+        _interactive.SpawnInteractiveObjects();
         _inputManager.EnableInput();
     }
 

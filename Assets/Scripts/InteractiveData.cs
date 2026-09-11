@@ -11,4 +11,5 @@ public class InteractiveData : ScriptableObject
     [Header("Settings")]
     public GameObject objectPrefab;
     public Vector3 positionObject;
+    public StateObject stateObject = StateObject.Operational;
 }

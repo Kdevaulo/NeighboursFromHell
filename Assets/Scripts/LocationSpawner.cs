@@ -13,12 +13,6 @@ public class LocationSpawner
 
     public void SpawnLocation()
     {
-        if (_locationPrefab == null)
-        {
-            Debug.Log("Префаб локации не назначен!");
-            return;
-        }
-
         _location = Object.Instantiate(_locationPrefab, _spawnPoint, Quaternion.identity);
     }
 

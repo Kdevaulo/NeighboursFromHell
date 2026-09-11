@@ -17,15 +17,15 @@ public class ObjectSpawner
 
     public void SpawnObjects()
     {
-        for (int i = 0; i < _items.Length; i++)
+        foreach (var t in _items)
         {
-            if (_items[i].objectPrefab == null)
+            if (t.objectPrefab == null)
             {
-                Debug.LogErrorFormat("ObjectPrefab {0} не назначены!", _items[i].nameObject);
+                Debug.LogError($"ObjectPrefab {t.nameObject} не назначены!");
                 return;
             }
 
-            GameObject spawned = Object.Instantiate(_items[i].objectPrefab, _items[i].positionObject, Quaternion.identity, _transformParent);
+            GameObject spawned = Object.Instantiate(t.objectPrefab, t.positionObject, Quaternion.identity, _transformParent);
             _spawnedObjects.Add(spawned);
         }
     }
@@ -39,6 +39,7 @@ public class ObjectSpawner
                 Object.Destroy(spawned);
             }
         }
+
         _spawnedObjects.Clear();
     }
 }
