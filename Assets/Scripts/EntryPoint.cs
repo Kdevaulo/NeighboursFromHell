@@ -4,13 +4,13 @@ public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private GameObject _locationPrefab;
     [SerializeField] private InputManager _inputManager;
-    [SerializeField] private InteractiveObject _interactive;
+    [SerializeField] private InteractiveItemsManager _interactive;
 
     private LocationSpawner _locationSpawner;
 
     private void Awake()
     {
-        if (!ValidationHelper.CheckRefs(this, _locationPrefab, _inputManager, _interactive))
+        if (!ValidationHelper.CheckRefs(this, _locationPrefab))
         {
             enabled = false;
             return;
@@ -22,7 +22,7 @@ public class EntryPoint : MonoBehaviour
 
     private void Start()
     {
-        if (!ValidationHelper.CheckRefs(this, _locationPrefab, _inputManager, _interactive))
+        if (!ValidationHelper.CheckRefs(this, _inputManager, _interactive))
         {
             enabled = false;
             return;

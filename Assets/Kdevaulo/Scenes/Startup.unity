@@ -122,11 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &136772094 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8567595825187078382, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-  m_PrefabInstance: {fileID: 545493747}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178091709
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf440316cd4d9f4bbf43e50cb1612ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _locationPrefab: {fileID: 136772094}
+  _locationPrefab: {fileID: 8567595825187078382, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
   _inputManager: {fileID: 217879031}
   _interactive: {fileID: 1904459575}
 --- !u!114 &178091712
@@ -280,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputManager: {fileID: 217879031}
   _mainCamera: {fileID: 519420031}
+  _interactive: {fileID: 1904459575}
 --- !u!4 &497251464
 Transform:
   m_ObjectHideFlags: 0
@@ -387,63 +383,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &545493747
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957158385984169533, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8567595825187078382, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
-      propertyPath: m_Name
-      value: Location
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3093a1b15802956408ff29519e7eb7b9, type: 3}
 --- !u!1 &836388226
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +473,7 @@ GameObject:
   - component: {fileID: 1904459574}
   - component: {fileID: 1904459575}
   m_Layer: 0
-  m_Name: InteractiveObject
+  m_Name: InteractiveObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,9 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01afd7e959546334199cc0d60927f621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveData:
-  - {fileID: 11400000, guid: 506e5cfb7c7eb5e45b23c656be5f7afc, type: 2}
-  - {fileID: 11400000, guid: dd151ffb1ea189d4993d104a60f3c079, type: 2}
+  _levelConfig: {fileID: 11400000, guid: 4923697c4c4839d4384b9eb2c1001f23, type: 2}
   _transform: {fileID: 1904459574}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -581,4 +518,3 @@ SceneRoots:
   - {fileID: 178091710}
   - {fileID: 1904459574}
   - {fileID: 497251464}
-  - {fileID: 545493747}

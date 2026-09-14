@@ -5,10 +5,11 @@ public class InteractionHandler : MonoBehaviour
 {
     [SerializeField] private InputManager _inputManager;
     [SerializeField] private Camera _mainCamera;
+    [SerializeField] private InteractiveItemsManager _interactive;
 
     private void Awake()
     {
-        if (!ValidationHelper.CheckRefs(this, _inputManager, _mainCamera))
+        if (!ValidationHelper.CheckRefs(this, _inputManager, _mainCamera, _interactive))
         {
             enabled = false;
         }
@@ -16,43 +17,43 @@ public class InteractionHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        // подписка, когда объект активен
         _inputManager.OnLeftClick += HandleLeftClick;
         _inputManager.OnRightClick += HandleRightClick;
     }
 
     private void OnDisable()
     {
-        // отписка, когда объект выключается
         _inputManager.OnLeftClick -= HandleLeftClick;
         _inputManager.OnRightClick -= HandleRightClick;
     }
 
     private void HandleLeftClick()
     {
-        Vector2 screenPos = Mouse.current.position.ReadValue();
-        Vector2 worldPos = _mainCamera.ScreenToWorldPoint(screenPos);
-
-        Collider2D collPoint = Physics2D.OverlapPoint(worldPos);
+        var collPoint = GetColliderUnderMouse();
 
         if (collPoint != null)
         {
-            Debug.Log("ЛКМ клик!");
-            Debug.LogFormat("В коллайдер {0} попал", collPoint.name);
+            var item = collPoint.GetComponent<InteractiveItem>();
+            item.Break();
         }
     }
 
     private void HandleRightClick()
     {
-        Vector2 screenPos = Mouse.current.position.ReadValue();
-        Vector2 worldPos = _mainCamera.ScreenToWorldPoint(screenPos);
-
-        Collider2D collPoint = Physics2D.OverlapPoint(worldPos);
+        var collPoint = GetColliderUnderMouse();
 
         if (collPoint != null)
         {
-            Debug.Log("ПКМ клик!");
-            Debug.LogFormat("В коллайдер {0} попал", collPoint.name);
+            var item = collPoint.GetComponent<InteractiveItem>();
+            item.Repair();
         }
+    }
+
+    private Collider2D GetColliderUnderMouse()
+    {
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        Vector2 worldPos = _mainCamera.ScreenToWorldPoint(screenPos);
+        Collider2D collPoint = Physics2D.OverlapPoint(worldPos);
+        return collPoint;
     }
 }

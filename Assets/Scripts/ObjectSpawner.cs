@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class ObjectSpawner
 {
-    private InteractiveData[] _items;
+    private LevelConfig _levelConfig;
     private Transform _transformParent;
 
     private List<GameObject> _spawnedObjects = new List<GameObject>();
 
-    public ObjectSpawner(InteractiveData[] items, Transform transform)
+    public ObjectSpawner(LevelConfig levelConfig, Transform transform)
     {
-        _items = items;
+        _levelConfig = levelConfig;
         _transformParent = transform;
     }
 
     public void SpawnObjects()
     {
-        foreach (var t in _items)
+        foreach (var item in _levelConfig._items)
         {
-            if (t.objectPrefab == null)
+            if (item.objectPrefab == null)
             {
-                Debug.LogError($"ObjectPrefab {t.nameObject} не назначены!");
+                Debug.LogError($"ObjectPrefab {item.nameObject} не назначены!");
                 return;
             }
 
-            GameObject spawned = Object.Instantiate(t.objectPrefab, t.positionObject, Quaternion.identity, _transformParent);
+            GameObject spawned = Object.Instantiate(item.objectPrefab, item.positionObject, Quaternion.identity, _transformParent);
             _spawnedObjects.Add(spawned);
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6571144200898746329}
   - component: {fileID: 3358107166409063710}
   - component: {fileID: 4204146139325896125}
+  - component: {fileID: 510141570696270753}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74, y: 1.11}
   m_EdgeRadius: 0
+--- !u!114 &510141570696270753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985088808779283018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d621e4f67d5e73408ca724a42c73e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: dd151ffb1ea189d4993d104a60f3c079, type: 2}
+  _renderer: {fileID: 3358107166409063710}

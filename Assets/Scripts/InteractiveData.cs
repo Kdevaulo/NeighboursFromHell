@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New InteractiveData", menuName = "InteractiveData", order = 51)]
+[CreateAssetMenu(fileName = "New InteractiveData", menuName = "InteractiveData", order = 52)]
 public class InteractiveData : ScriptableObject
 {
     [Header("Visuals")]
