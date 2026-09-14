@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class
-    InteractiveItem : MonoBehaviour
+public class InteractiveItem : MonoBehaviour
 {
     [SerializeField] private InteractiveData _data;
     [SerializeField] private SpriteRenderer _renderer;

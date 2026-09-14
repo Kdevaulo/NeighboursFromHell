@@ -13,6 +13,7 @@ public class InteractiveItemsManager : MonoBehaviour
         {
             enabled = false;
         }
+
         _objectSpawner = new ObjectSpawner(_levelConfig, _transform);
     }
 
